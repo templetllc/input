@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Content Manager - Outputs | Templet</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://templet.io/images/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/css/fileinput.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/css/fileinput.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/f8d1b3f92a.js" crossorigin="anonymous"></script>
+</head>
+<body id="top">
+    <nav>
+        <div class="container">
+            <header class="py-3 mb-4 mt-4">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="232.488" height="29.791" viewBox="0 0 232.488 29.791">
+                        <g id="Group_1093" data-name="Group 1093" transform="translate(15.966 -18.105)">
+                          <path id="Path_2583" data-name="Path 2583" d="M-152.138,3.641l-2.247-2.215A5.077,5.077,0,0,1-158.141,2.9a4.8,4.8,0,0,1-5.04-5.1,4.914,4.914,0,0,1,5.072-5.168,5.51,5.51,0,0,1,3.6,1.348l2.087-2.151a7.682,7.682,0,0,0-5.714-2.343c-4.591,0-8.347,2.825-8.347,8.314s3.788,8.314,8.347,8.314A8.024,8.024,0,0,0-152.138,3.641Zm8.122-14.125a7.915,7.915,0,0,0-8.154,8.25c0,4.719,3.178,8.25,8.154,8.25a7.861,7.861,0,0,0,8.218-8.25A7.986,7.986,0,0,0-144.017-10.484Zm0,3.05a4.952,4.952,0,0,1,4.88,5.2c0,2.825-1.83,5.168-4.88,5.168a4.843,4.843,0,0,1-4.847-5.168A4.888,4.888,0,0,1-144.017-7.434Zm22.118,13.1h3.339V-2.844c0-4.944-2.985-7.64-6.806-7.64a6.851,6.851,0,0,0-5.329,2.6l-.193-2.311H-133.9V5.663h3.307V-2.619a4.532,4.532,0,0,1,4.43-4.815c2.729,0,4.27,1.894,4.27,4.623Zm10.786-20.385-3.339.353v4.237h-3.05v2.857h3.05V.27c0,3.66,1.83,5.586,5.136,5.586a8.138,8.138,0,0,0,3.435-.706l-.963-2.825a4.35,4.35,0,0,1-2.022.546c-1.541,0-2.279-.931-2.279-2.6V-7.274h4.655v-2.857h-4.623ZM-102.284-.95h12.841c.032-.482.064-.963.064-1.412,0-5.457-3.307-8.154-8.026-8.154a7.921,7.921,0,0,0-8.314,8.25c0,5.072,3.339,8.379,8.539,8.379a9.32,9.32,0,0,0,6.806-2.7L-92.525,1.33a6.491,6.491,0,0,1-4.591,1.7C-100.037,3.031-102,1.49-102.284-.95Zm9.663-2.793h-9.6a4.65,4.65,0,0,1,4.912-3.82C-94.612-7.563-92.846-6.279-92.621-3.743Zm16.95,9.406h3.339V-2.844c0-4.944-2.985-7.64-6.806-7.64a6.851,6.851,0,0,0-5.329,2.6L-84.66-10.2h-3.018V5.663h3.307V-2.619a4.532,4.532,0,0,1,4.43-4.815c2.729,0,4.27,1.894,4.27,4.623Zm10.786-20.385-3.339.353v4.237h-3.05v2.857h3.05V.27c0,3.66,1.83,5.586,5.136,5.586a8.138,8.138,0,0,0,3.435-.706l-.963-2.825a4.35,4.35,0,0,1-2.022.546c-1.541,0-2.279-.931-2.279-2.6V-7.274h4.655v-2.857h-4.623ZM-58.914,3.9A1.986,1.986,0,0,0-56.86,5.952,1.979,1.979,0,0,0-54.837,3.9,1.951,1.951,0,0,0-56.86,1.875,1.959,1.959,0,0,0-58.914,3.9ZM-47.9-14.721l-3.339.353v4.237h-3.05v2.857h3.05V.27c0,3.66,1.83,5.586,5.136,5.586a8.138,8.138,0,0,0,3.435-.706l-.963-2.825a4.35,4.35,0,0,1-2.022.546c-1.541,0-2.279-.931-2.279-2.6V-7.274h4.655v-2.857H-47.9ZM-39.075-.95h12.841c.032-.482.064-.963.064-1.412,0-5.457-3.307-8.154-8.026-8.154a7.921,7.921,0,0,0-8.314,8.25c0,5.072,3.339,8.379,8.539,8.379a9.32,9.32,0,0,0,6.806-2.7L-29.316,1.33a6.491,6.491,0,0,1-4.591,1.7C-36.828,3.031-38.786,1.49-39.075-.95Zm9.663-2.793h-9.6A4.65,4.65,0,0,1-34.1-7.563C-31.4-7.563-29.637-6.279-29.412-3.743ZM-13.65,5.663h3.339V-3.1c0-2.343,1.509-4.27,3.852-4.27,2.311,0,3.5,1.862,3.5,4.205V5.663H.378V-3.165c0-4.591-2.311-7.319-6.709-7.319a5.745,5.745,0,0,0-5.425,3.146,5.008,5.008,0,0,0-4.976-3.178,4.745,4.745,0,0,0-4.43,2.376l-.225-2.022h-3.082V5.663h3.307V-3.1c0-2.343,1.509-4.3,3.82-4.3C-15-7.4-13.65-5.444-13.65-3.1ZM3.043,13.015H6.349v-9.6c1.188,1.99,3.66,2.664,5.586,2.664,4.912,0,7.993-3.467,7.993-8.314,0-4.751-3.242-8.25-7.993-8.25A6.6,6.6,0,0,0,6.349-7.595l-.193-2.568H3.043ZM11.614,2.87a4.93,4.93,0,0,1-4.976-5.1,4.8,4.8,0,0,1,4.976-5.04,4.743,4.743,0,0,1,5.008,5.04A4.882,4.882,0,0,1,11.614,2.87ZM25.289-16.776H21.983V5.663h3.307ZM30.779-.95H43.62c.032-.482.064-.963.064-1.412,0-5.457-3.307-8.154-8.026-8.154a7.921,7.921,0,0,0-8.314,8.25c0,5.072,3.339,8.379,8.539,8.379a9.32,9.32,0,0,0,6.806-2.7L40.538,1.33a6.491,6.491,0,0,1-4.591,1.7C33.026,3.031,31.068,1.49,30.779-.95Zm9.663-2.793h-9.6a4.65,4.65,0,0,1,4.912-3.82C38.451-7.563,40.217-6.279,40.442-3.743ZM50.489-14.721l-3.339.353v4.237H44.1v2.857h3.05V.27c0,3.66,1.83,5.586,5.136,5.586a8.138,8.138,0,0,0,3.435-.706l-.963-2.825a4.35,4.35,0,0,1-2.022.546c-1.541,0-2.279-.931-2.279-2.6V-7.274h4.655v-2.857H50.489Z" transform="translate(150.522 34.881)"/>
+                          <circle id="Ellipse_3" data-name="Ellipse 3" cx="4" cy="4" r="4" transform="translate(208.522 33.4)" fill="#23dd87"/>
+                        </g>
+                    </svg>                      
+                </a>
+            </header>
+        </div>
+    </nav>
+
+    <section class="bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <span class="text-green d-none d-md-block tag fs-28">Bigger. Faster. Better</span>
+                    <h1 class="display-5 mt-1 mb-0 text-black">Quickly send any file of your project<span class="dot">.</span></h1>
+                    <p class="fs-5 py-2 mb-0 text-black">Ready to share a new project file?</p>
+                    <a href="./index.php" class="btn btn-primary-t mt-2 text-uppercase">Lorem ipsum</a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img src="./images/img-index.png" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-md-12 mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48.656" height="48.656" viewBox="0 0 48.656 48.656">
+                        <g id="favicon" transform="translate(-77.613 -454.774)">
+                          <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="24.328" cy="24.328" rx="24.328" ry="24.328" transform="translate(77.613 454.774)" fill="#07dd87"/>
+                          <g id="Group_4" data-name="Group 4" transform="translate(94.433 462.406)">
+                            <path id="Path_4" data-name="Path 4" d="M117.334,487.722l.279-3.222-1.37-.356a1.26,1.26,0,0,1-.964-.773,1.43,1.43,0,0,1-.013-1.1q.216-.507.622-.507,1.345,0,2.08-.051a61.136,61.136,0,0,1,1.5-8.22,2.279,2.279,0,0,1,2-1.573,2.818,2.818,0,0,1,2.207.178.547.547,0,0,1,.3.558q-1.168,7.129-1.345,8.575a32.461,32.461,0,0,0,3.653-.761q.457-.127.685.659a4.029,4.029,0,0,1-.152,2.512,1.755,1.755,0,0,1-1.116,1.193,13.541,13.541,0,0,1-3.527.253q-.025.381-.1,1.091c-.051.474-.085.837-.1,1.091a72.03,72.03,0,0,0-.583,10.859q.178,4.263,1.624,4.263t3.133-4.554a49.034,49.034,0,0,0,2.473-9.857q.051-.253.457-.317a1.189,1.189,0,0,1,.774.14.566.566,0,0,1,.317.609,54.108,54.108,0,0,1-1.218,6.127,41.967,41.967,0,0,1-1.763,5.341,12.8,12.8,0,0,1-2.335,3.869,3.822,3.822,0,0,1-2.778,1.433,3.531,3.531,0,0,1-2.968-1.8,14.018,14.018,0,0,1-1.776-5.683A44.112,44.112,0,0,1,117.334,487.722Z" transform="translate(-115.162 -471.786)" fill="#fff"/>
+                          </g>
+                        </g>
+                    </svg>
+                    <span class="ms-1 small text-black">&copy; 2023 Templet LLC. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - One : BEGIN -->
+    <!-- <div class="bg-white fixed-bottom mb-4">
+        <div class="container">
+            <footer class="py-4">
+                <div class="col-md-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48.656" height="48.656" viewBox="0 0 48.656 48.656">
+                        <g id="favicon" transform="translate(-77.613 -454.774)">
+                          <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="24.328" cy="24.328" rx="24.328" ry="24.328" transform="translate(77.613 454.774)" fill="#07dd87"/>
+                          <g id="Group_4" data-name="Group 4" transform="translate(94.433 462.406)">
+                            <path id="Path_4" data-name="Path 4" d="M117.334,487.722l.279-3.222-1.37-.356a1.26,1.26,0,0,1-.964-.773,1.43,1.43,0,0,1-.013-1.1q.216-.507.622-.507,1.345,0,2.08-.051a61.136,61.136,0,0,1,1.5-8.22,2.279,2.279,0,0,1,2-1.573,2.818,2.818,0,0,1,2.207.178.547.547,0,0,1,.3.558q-1.168,7.129-1.345,8.575a32.461,32.461,0,0,0,3.653-.761q.457-.127.685.659a4.029,4.029,0,0,1-.152,2.512,1.755,1.755,0,0,1-1.116,1.193,13.541,13.541,0,0,1-3.527.253q-.025.381-.1,1.091c-.051.474-.085.837-.1,1.091a72.03,72.03,0,0,0-.583,10.859q.178,4.263,1.624,4.263t3.133-4.554a49.034,49.034,0,0,0,2.473-9.857q.051-.253.457-.317a1.189,1.189,0,0,1,.774.14.566.566,0,0,1,.317.609,54.108,54.108,0,0,1-1.218,6.127,41.967,41.967,0,0,1-1.763,5.341,12.8,12.8,0,0,1-2.335,3.869,3.822,3.822,0,0,1-2.778,1.433,3.531,3.531,0,0,1-2.968-1.8,14.018,14.018,0,0,1-1.776-5.683A44.112,44.112,0,0,1,117.334,487.722Z" transform="translate(-115.162 -471.786)" fill="#fff"/>
+                          </g>
+                        </g>
+                    </svg>
+                    <span class="text-muted ms-2">&copy; 2023 Templet LLC. All rights reserved.</span>
+                </div>
+            </footer>
+        </div>
+    </div> -->
+    <!-- Footer - One : END -->
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/js/plugins/sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/themes/fas/theme.min.js"></script>
+    <script src="./js/file-upload.js"></script>
+
+</body>
+</html>

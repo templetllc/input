@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Content Manager - Outputs | Templet</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://templet.io/images/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/css/fileinput.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/css/fileinput.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/f8d1b3f92a.js" crossorigin="anonymous"></script>
+</head>
+<body id="top" class="mt-3">
+    <section class="bg-white">
+        <!-- Collaterals - One : BEGIN -->
+        <section class="bg-transparent files pb-5 mb-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text-uppercase text-danger">DECKS - Phase 1 - Outline</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="accordion" id="">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                        Upload files
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="container">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <div class="form-check form-switch" style="margin-left: -12px;">
+                                                        <input class="form-check-input success" type="checkbox" role="switch" id="FileSwitch" onchange="toggleDivs()">
+                                                        <label class="form-check-label" for="">OneDrive or Browse file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- onedrive -->
+                                        <div class="container" id="onedrive">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <form>  
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Notes link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://www.evernote.com/shard/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Support files</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://templetllc-my.sharepoint.com/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Loom link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://loom.com/share/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                    <label for="" class="form-label d-block">Language</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                        <label class="form-check-label" for="inlineRadio1">English</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                        <label class="form-check-label" for="inlineRadio2">Spanish</label>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- onedrive -->
+
+                                        <!-- browse-file -->
+                                        <div class="container" id="browse-file" style="display:none;">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <form>
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Notes link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://www.evernote.com/shard/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-md-12 p-0">
+                                                                <div class="file-upload-contain">
+                                                                    <label for="" class="form-label">File</label>
+                                                                    <input id="multiplefileupload" type="file" accept=".ppt,.pptx" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Loom link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://loom.com/share/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <label for="" class="form-label d-block">Language</label>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                    <label class="form-check-label" for="inlineRadio1">English</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">Spanish</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- browse-file -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5">
+
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text-uppercase text-danger">DECKS - Phase 1 - Writeup</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="accordion" id="">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                        Upload files
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="container">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <div class="form-check form-switch" style="margin-left: -12px;">
+                                                        <input class="form-check-input success" type="checkbox" role="switch" id="FileSwitch" onchange="toggleDivs()">
+                                                        <label class="form-check-label" for="">OneDrive or Browse file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- onedrive -->
+                                        <div class="container" id="onedrive">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <form>  
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">OneDrive link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://templetllc-my.sharepoint.com/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Loom link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://loom.com/share/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <label for="" class="form-label d-block">Language</label>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                    <label class="form-check-label" for="inlineRadio1">English</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">Spanish</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- onedrive -->
+
+                                        <!-- browse-file -->
+                                        <div class="container" id="browse-file" style="display:none;">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <form>
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-md-12 p-0">
+                                                                <div class="file-upload-contain">
+                                                                    <label for="" class="form-label">File</label>
+                                                                    <input id="multiplefileupload" type="file" accept=".ppt,.pptx" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Loom link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://loom.com/share/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <label for="" class="form-label d-block">Language</label>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                    <label class="form-check-label" for="inlineRadio1">English</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                    <label class="form-check-label" for="inlineRadio2">Spanish</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- browse-file -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="my-5">
+
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text-uppercase text-danger">DECKS - Phase 2 - Formatting</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="accordion" id="">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                        Upload files
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="container">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <div class="form-check form-switch" style="margin-left: -12px;">
+                                                        <input class="form-check-input success" type="checkbox" role="switch" id="FileSwitch" onchange="toggleDivs()">
+                                                        <label class="form-check-label" for="">OneDrive or Browse file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- onedrive -->
+                                        <div class="container" id="onedrive">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <form>  
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">OneDrive link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://templetllc-my.sharepoint.com/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Loom link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://loom.com/share/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- onedrive -->
+
+                                        <!-- browse-file -->
+                                        <div class="container" id="browse-file" style="display:none;">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <form>
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-md-12 p-0">
+                                                                <div class="file-upload-contain">
+                                                                    <label for="" class="form-label">File</label>
+                                                                    <input id="multiplefileupload" type="file" accept=".ppt,.pptx" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Loom link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://loom.com/share/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- browse-file -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Collaterals - One : END -->      
+    </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/js/plugins/sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/themes/fas/theme.min.js"></script>
+    <script src="./js/file-upload.js"></script>
+
+    <script>
+        function toggleDivs() {
+            var checkbox = document.getElementById("FileSwitch");
+            var OneDrive = document.getElementById("onedrive");
+            var BrowseFile = document.getElementById("browse-file");
+            if (checkbox.checked) {
+                OneDrive.style.display = "none";
+                BrowseFile.style.display = "block";
+            } else {
+                OneDrive.style.display = "block";
+                BrowseFile.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

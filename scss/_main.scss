@@ -1,0 +1,46 @@
+span.error {
+	display: none;
+	color: red;
+	font-size: 12px;
+	padding: 5px 0;
+}
+
+.form-switch {
+	// display: none !important;
+}
+
+.file-caption {
+	display: none;
+}
+
+.file-remove {
+	position: absolute;
+    right: 15px;
+    margin-top: -60px !important;
+}
+
+.footer-sticky {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#thanks {
+	.content {
+		min-height: 55vh;
+	}
+
+	.footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
+	.contact_us {
+		position: fixed;
+		bottom: 120px;
+		width: 100%;
+		left: 50%;
+    	transform: translateX(-50%);
+	}
+}

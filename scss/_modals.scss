@@ -1,0 +1,104 @@
+.modal-dialog {
+    max-width: 440px;
+    transform: translate(0,-50px) !important;
+}
+
+.modal-content {
+    border: 0px solid rgba(0,0,0,.2);
+    border-radius: 1rem;
+    margin-top: 5rem;
+}
+
+.modal-header {
+    border-bottom: 0px solid #dee2e6;
+}
+
+.form-control {
+    padding: 0.7rem 0.75rem;
+    font-size: 1rem;
+    color: #000000;
+    background-color: #F5F5F5;
+    border: 1px solid #707070;
+    border-radius: 1rem;
+}
+
+h1 {
+    color: #000000;
+}
+
+.form-select {
+    background-color: #F5F5F5;
+    border: 1px solid #707070!important;
+    padding: 0.7rem 0.75rem;
+}
+
+.form-control-lg {
+    padding: 0.5rem 0.75rem;
+}
+
+[type="file"]::-webkit-file-upload-button {
+    padding: 0.70rem 1rem;
+}
+
+.modal {
+    .modal-title {
+        font-size: 1.25rem;
+        color: $black;
+        font-family: 'Nexa-Bold'!important;
+    }
+
+    .form-control, .form-select {
+        border-radius: 6px;
+        font-family: "Nexa-Regular" !important;
+        border: 1px solid #DADCDE!important;
+        color: #5D5D5D !important;
+        padding: 0.657rem 0.75rem!important;
+        font-size: 14px!important;
+    }
+
+    .form-label {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .modal-content {
+        border-radius: 12px;
+    }
+
+    .modal-footer {
+        border-top: 0 solid transparent;
+    }
+
+    h6 {
+        font-family: 'Nexa-Bold'!important;
+        font-size: 14px;
+    }
+    
+    .ico-dot {
+        position: relative;
+        top: -1px;
+        margin-right: 2px;
+    }
+
+    .form-check {
+        font-size: 14px;
+    }
+
+    .modal-content {
+        border: 0px solid rgba(0,0,0,.0)!important;
+        border-radius: 10px!important;
+    }
+
+    .btn-plus {
+        padding: 0.657rem 0.75rem !important;
+        padding-bottom: 9px!important;
+        svg {
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    .newproject .mt-3 {
+        margin-top: 12px!important;
+    }
+}

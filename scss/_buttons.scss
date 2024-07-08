@@ -1,0 +1,122 @@
+.btn {
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 0.875rem;
+    border-radius: .375rem;
+}
+
+.btn-primary {
+    color: $white;
+    background-color: $btn-color-one;
+    border-color: $btn-color-one;
+    padding: .45rem 0.8rem;
+    font-size: 0.875rem;
+    &:hover {
+        color: $white;
+        background-color: $btn-color-two-hover;
+        border-color: $btn-color-two-hover-border;
+    }
+}
+
+.btn-primary-t {
+    color: $black;
+    background-color: $tgreen;
+    border-color: $tgreen;
+    padding: .7rem 1.5rem;
+    font-size: 0.875rem;
+    border-radius: 100px;
+    &:hover {
+        color: $white;
+        background-color: $btn-color-two-hover;
+        border-color: $btn-color-two-hover-border;
+    }
+}
+
+.btn-secondary {
+    color: #989EA7;
+    background-color: #F7F9FC;
+    border-color: #F7F9FC;
+    padding: .45rem 0.8rem;
+    font-size: 0.875rem;
+    &:hover {
+        color: #989EA7;
+        background-color: #dadde0;
+        border-color: #dadde0;
+    }
+}
+
+.btn-secondary-dark {
+    color: $white;
+    background-color: $btn-color-dark;
+    border-color: #F7F9FC;
+    padding: .45rem 0.8rem;
+    font-size: 0.875rem;
+    &:hover {
+        color: #151515 !important;
+        background-color: #00FF7F !important;
+    }
+}
+
+.btn-outline-primary {
+    color: $green;
+    background-color: $btn-color-two;
+    border-color: $green;
+    padding: .45rem 0.8rem;
+    font-size: 0.875rem;
+    &:hover {
+        color: $white;
+        background-color: $btn-color-two-hover;
+        border-color: $btn-color-two;
+    }
+}
+
+.btn-white {
+    color: $green;
+    background-color: $btn-color-two;
+    border-color: $white;
+    padding: .45rem 0.8rem;
+    font-size: 0.875rem;
+    &:hover {
+        color: $white;
+        background-color: $btn-color-two-hover;
+        border-color: $btn-color-two;
+    }
+}
+
+
+.btn-outline-secondary {
+    color: $white;
+    background-color: $bg-green;
+    border-color: $white;
+    padding: .45rem 0.8rem;
+    font-size: 0.875rem;
+    &:hover {
+        color: $green;
+        background-color: $btn-color-two;
+        border-color: $btn-color-two;
+    }
+}
+
+.btn-link {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: $paragraph;
+    text-decoration: none;
+    padding: .3rem 0.2rem;
+    &:hover { 
+        color: $btn-color-two-hover; 
+        path {
+            fill: #1EC46B;
+        }
+    }
+}

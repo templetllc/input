@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <form action="https://templet-uploads.azurewebsites.net/api/OnedriveUpload/?folderId=01G3FULMRKNYJIOVO2JJDY4IMAF43ANH3S" enctype="multipart/form-data" method="POST">
+      <div style="display: block; margin: 10px;">
+      <label class="custom-uploader" for="file">Upload Your File</label>
+      <input
+        id="file"
+        name="fileToUpload"
+        type="file">
+      </div>
+      <div style="display: none; margin: 10px;">
+          <label>Folder ID</label>
+          <input type="text" name="folderid" value="01G3FULMRKNYJIOVO2JJDY4IMAF43ANH3S" style="width: 300px;">
+
+      </div>
+      
+      <button class="btn btn-success" name="submit" type="submit">
+        Upload File
+      </button>
+    </form>
+  </body>
+</html>

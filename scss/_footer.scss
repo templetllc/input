@@ -1,0 +1,26 @@
+footer {
+    .text-muted {
+        color: $footer-text;
+        font-size: .75rem;
+    }
+    .btn {
+        font-size: .875rem;
+    }
+    .fa-brands {
+        font-size: 1.25rem;
+        color: $white;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        &:hover {
+            color: $btn-color-two-hover;
+        }
+    }
+    .btn-link {
+        font-weight: 400;
+        color: $footer-text;
+        text-decoration: none;
+        &:hover {
+            color: $btn-link-color-hover;
+        }
+    }
+}
+

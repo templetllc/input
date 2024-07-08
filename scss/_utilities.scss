@@ -1,0 +1,154 @@
+.height-10 {height: 10vh;}
+.height-20 {height: 20vh;}
+.height-30 {height: 30vh;}
+.height-40 {height: 40vh;}
+.height-50 {height: 50vh;}
+.height-60 {height: 60vh;}
+.height-70 {height: 70vh;}
+.height-80 {height: 80vh;}
+.height-90 {height: 90vh;}
+.height-100 {height: 100vh;}
+
+.fs-20 {
+    font-size: 1.25rem;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.dot {
+    color: $tgreen;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #666666!important;
+}
+
+.border-top {
+    border-top: 1px solid #666666!important;
+}
+
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: $bg-light;
+}
+
+.bg-gray {
+    --bs-bg-opacity: 1;
+    background-color: $bg-gray;
+}
+
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: $bg-dark;
+}
+
+.py-6 {
+    padding-top: 6rem!important;
+    padding-bottom: 6rem!important;
+}
+
+.pb-6 {
+    padding-bottom: 6rem!important;
+}
+
+.text-gray {
+    color: $paragraph;
+}
+
+.text-black {
+    color: $black!important;
+}
+
+.text-green {
+    color: $green;
+}
+
+.title {
+    font-family: 'Nexa-Heavy'!important;
+    color: $title;
+    font-size: 2rem;
+}
+
+.lead {
+    font-family: 'Nexa-Regular';
+    color: $paragraph;
+    font-size: 1.125rem;
+}
+
+.text-white {
+    color: white!important;
+}
+
+.fa-youtube {
+    position: absolute;
+    font-size: 40px;
+    top: 41%;
+    left: 43%;
+}
+
+.btn-video-thumbnail {
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #D0D0D0;
+    &:hover {
+        color: white!important;
+    }
+}
+
+.icon {
+    background: rgb(30,196,107);
+    background: linear-gradient(45deg, rgba(30,196,107,1) 0%, rgba(7,221,135,1) 100%);
+    border-radius: 1.375rem;
+    padding: 1.25rem;
+    width: 6rem;
+    svg {
+        width: 3.5rem;
+        fill: $white; 
+    }
+}
+
+.py-5 {
+    padding-top: 4rem!important;
+    padding-bottom: 4rem!important;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0 rgb(13 110 253 / 25%);
+}
+
+.line {
+    hr {
+        margin: 1rem 0;
+        color: inherit;
+        background-color: #666666;
+        border: 0;
+        opacity: 1;
+    }
+}
+
+.progress {
+    display: flex;
+    height: 8px;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #E6E6E6;
+    border-radius: 0;
+}
+
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #1EC46B;
+    transition: width .6s ease;
+}
+
+.file-preview-frame .kv-file-content {
+    overflow: hidden;
+}

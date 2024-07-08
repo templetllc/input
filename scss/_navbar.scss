@@ -1,0 +1,47 @@
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: $black;
+    background-image: url('../images/bg-header.png');
+    background-position: center right!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+
+    .btn-outline-light {
+        color: $white;
+        border-color: $white;
+        border-radius: 3.125rem;
+        padding: 0.375rem 1.4rem;
+    }
+
+    .btn-outline-light:hover {
+        color: $black ;
+        background-color: $btn-color-one;
+        border-color: $white;
+    }
+}
+
+// Dark links against a light background
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            color: $white;
+            padding-right: 0.8rem;
+            padding-left: 0.8rem;
+            &:hover,
+            &:focus {
+            color: $btn-color-two-hover;
+            opacity: 0.8;
+            }
+
+            &.disabled {
+            color: $white;
+            }
+        }
+    }
+    
+    .navbar-toggler {
+        color: rgba(0,0,0,.55);
+        border-color: transparent;
+    }
+}

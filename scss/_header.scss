@@ -1,0 +1,23 @@
+.header {
+    .display-5 {
+        color: $black;
+        font-family: 'Nexa-Heavy'!important;
+    }
+
+    p {
+        color: $black;
+    }
+
+    .tag {
+        font-size: 1.25rem;
+        color: $green;
+    }
+}
+
+.bg-image {
+    background-color: $black;
+    background-position: top center!important;
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    background-image: url('../images/bg-top.png');
+}

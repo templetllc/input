@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Content Manager - Outputs | Templet</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://templet.io/images/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/css/fileinput.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/css/fileinput.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://kit.fontawesome.com/f8d1b3f92a.js" crossorigin="anonymous"></script>
+
+    <style>
+        #browse-file {
+          display: none;
+        }
+      </style>
+</head>
+<body id="top">
+
+    <!-- Navbar - Options : BEGIN -->
+    <nav class="navbar navbar-expand-lg bg-green">
+        <div class="container">
+            <ul class="navbar-nav me-auto d-flex justify-content-between">
+                <li class="nav-item">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="232.488" height="29.791" viewBox="0 0 232.488 29.791">
+                            <g id="Group_1093" data-name="Group 1093" transform="translate(15.966 -18.105)">
+                            <path id="Path_2583" data-name="Path 2583" d="M-152.138,3.641l-2.247-2.215A5.077,5.077,0,0,1-158.141,2.9a4.8,4.8,0,0,1-5.04-5.1,4.914,4.914,0,0,1,5.072-5.168,5.51,5.51,0,0,1,3.6,1.348l2.087-2.151a7.682,7.682,0,0,0-5.714-2.343c-4.591,0-8.347,2.825-8.347,8.314s3.788,8.314,8.347,8.314A8.024,8.024,0,0,0-152.138,3.641Zm8.122-14.125a7.915,7.915,0,0,0-8.154,8.25c0,4.719,3.178,8.25,8.154,8.25a7.861,7.861,0,0,0,8.218-8.25A7.986,7.986,0,0,0-144.017-10.484Zm0,3.05a4.952,4.952,0,0,1,4.88,5.2c0,2.825-1.83,5.168-4.88,5.168a4.843,4.843,0,0,1-4.847-5.168A4.888,4.888,0,0,1-144.017-7.434Zm22.118,13.1h3.339V-2.844c0-4.944-2.985-7.64-6.806-7.64a6.851,6.851,0,0,0-5.329,2.6l-.193-2.311H-133.9V5.663h3.307V-2.619a4.532,4.532,0,0,1,4.43-4.815c2.729,0,4.27,1.894,4.27,4.623Zm10.786-20.385-3.339.353v4.237h-3.05v2.857h3.05V.27c0,3.66,1.83,5.586,5.136,5.586a8.138,8.138,0,0,0,3.435-.706l-.963-2.825a4.35,4.35,0,0,1-2.022.546c-1.541,0-2.279-.931-2.279-2.6V-7.274h4.655v-2.857h-4.623ZM-102.284-.95h12.841c.032-.482.064-.963.064-1.412,0-5.457-3.307-8.154-8.026-8.154a7.921,7.921,0,0,0-8.314,8.25c0,5.072,3.339,8.379,8.539,8.379a9.32,9.32,0,0,0,6.806-2.7L-92.525,1.33a6.491,6.491,0,0,1-4.591,1.7C-100.037,3.031-102,1.49-102.284-.95Zm9.663-2.793h-9.6a4.65,4.65,0,0,1,4.912-3.82C-94.612-7.563-92.846-6.279-92.621-3.743Zm16.95,9.406h3.339V-2.844c0-4.944-2.985-7.64-6.806-7.64a6.851,6.851,0,0,0-5.329,2.6L-84.66-10.2h-3.018V5.663h3.307V-2.619a4.532,4.532,0,0,1,4.43-4.815c2.729,0,4.27,1.894,4.27,4.623Zm10.786-20.385-3.339.353v4.237h-3.05v2.857h3.05V.27c0,3.66,1.83,5.586,5.136,5.586a8.138,8.138,0,0,0,3.435-.706l-.963-2.825a4.35,4.35,0,0,1-2.022.546c-1.541,0-2.279-.931-2.279-2.6V-7.274h4.655v-2.857h-4.623ZM-58.914,3.9A1.986,1.986,0,0,0-56.86,5.952,1.979,1.979,0,0,0-54.837,3.9,1.951,1.951,0,0,0-56.86,1.875,1.959,1.959,0,0,0-58.914,3.9ZM-47.9-14.721l-3.339.353v4.237h-3.05v2.857h3.05V.27c0,3.66,1.83,5.586,5.136,5.586a8.138,8.138,0,0,0,3.435-.706l-.963-2.825a4.35,4.35,0,0,1-2.022.546c-1.541,0-2.279-.931-2.279-2.6V-7.274h4.655v-2.857H-47.9ZM-39.075-.95h12.841c.032-.482.064-.963.064-1.412,0-5.457-3.307-8.154-8.026-8.154a7.921,7.921,0,0,0-8.314,8.25c0,5.072,3.339,8.379,8.539,8.379a9.32,9.32,0,0,0,6.806-2.7L-29.316,1.33a6.491,6.491,0,0,1-4.591,1.7C-36.828,3.031-38.786,1.49-39.075-.95Zm9.663-2.793h-9.6A4.65,4.65,0,0,1-34.1-7.563C-31.4-7.563-29.637-6.279-29.412-3.743ZM-13.65,5.663h3.339V-3.1c0-2.343,1.509-4.27,3.852-4.27,2.311,0,3.5,1.862,3.5,4.205V5.663H.378V-3.165c0-4.591-2.311-7.319-6.709-7.319a5.745,5.745,0,0,0-5.425,3.146,5.008,5.008,0,0,0-4.976-3.178,4.745,4.745,0,0,0-4.43,2.376l-.225-2.022h-3.082V5.663h3.307V-3.1c0-2.343,1.509-4.3,3.82-4.3C-15-7.4-13.65-5.444-13.65-3.1ZM3.043,13.015H6.349v-9.6c1.188,1.99,3.66,2.664,5.586,2.664,4.912,0,7.993-3.467,7.993-8.314,0-4.751-3.242-8.25-7.993-8.25A6.6,6.6,0,0,0,6.349-7.595l-.193-2.568H3.043ZM11.614,2.87a4.93,4.93,0,0,1-4.976-5.1,4.8,4.8,0,0,1,4.976-5.04,4.743,4.743,0,0,1,5.008,5.04A4.882,4.882,0,0,1,11.614,2.87ZM25.289-16.776H21.983V5.663h3.307ZM30.779-.95H43.62c.032-.482.064-.963.064-1.412,0-5.457-3.307-8.154-8.026-8.154a7.921,7.921,0,0,0-8.314,8.25c0,5.072,3.339,8.379,8.539,8.379a9.32,9.32,0,0,0,6.806-2.7L40.538,1.33a6.491,6.491,0,0,1-4.591,1.7C33.026,3.031,31.068,1.49,30.779-.95Zm9.663-2.793h-9.6a4.65,4.65,0,0,1,4.912-3.82C38.451-7.563,40.217-6.279,40.442-3.743ZM50.489-14.721l-3.339.353v4.237H44.1v2.857h3.05V.27c0,3.66,1.83,5.586,5.136,5.586a8.138,8.138,0,0,0,3.435-.706l-.963-2.825a4.35,4.35,0,0,1-2.022.546c-1.541,0-2.279-.931-2.279-2.6V-7.274h4.655v-2.857H50.489Z" transform="translate(150.522 34.881)" fill="#fff"/>
+                            <circle id="Ellipse_3" data-name="Ellipse 3" cx="4" cy="4" r="4" transform="translate(208.522 33.4)" fill="#23dd87"/>
+                            </g>
+                        </svg>  
+                    </a>
+                </li>
+            </ul>
+
+            <div class="d-flex align-items-center">
+                <button type="button" class="btn btn-primary-t ms-2">
+                    <div class="ms-1 text-uppercase">Need help?</div>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar - Options : END -->
+
+    <div class="container-fluid g-0 sticky-top">
+        <div class="row">
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar w-50"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-white">
+        <!-- Banner - One : BEGIN -->
+        <main class="header">
+            <div class="container">
+                <div class="row align-items-center justify-content-center py-5">
+                    <div class="col-md-12 text-left">
+                        <h1 class="display-6 mt-1 mb-0">Hi <span class="name">[NAME]!</span> Happy to hear from you again!</h1>
+                        <p class="fs-5 pt-1 text-white mb-0">Ready to share a new project file?</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Banner - One : END -->
+
+        <!-- Collaterals - One : BEGIN -->
+        <section class="bg-transparent files pb-5 mb-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="11" viewBox="0 0 11 11">
+                                            <defs>
+                                              <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                                                <stop offset="0" stop-color="#61e1cb"/>
+                                                <stop offset="1" stop-color="#00e16f"/>
+                                              </linearGradient>
+                                            </defs>
+                                            <circle id="Ellipse_210" data-name="Ellipse 210" cx="5.5" cy="5.5" r="5.5" fill="url(#linear-gradient)"/>
+                                        </svg>
+                                        <div class="ms-2">Your project</div>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <table>
+                                            <tr>
+                                                <td class="bold"><b>Project</b></td>
+                                                <td class="ms-4 d-block">CLIENT - TYPE - Name</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bold"><b>Task</b></td>
+                                                <td class="ms-4 d-block">Task name</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bold"><b>Deliverable type</b></td>
+                                                <td class="ms-4 d-block">DELIVERABLE - Type</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                        Upload files
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="container">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <div class="form-check form-switch" style="margin-left: -12px;">
+                                                        <input class="form-check-input success" type="checkbox" role="switch" id="FileSwitch" onchange="toggleDivs()">
+                                                        <label class="form-check-label" for="">OneDrive or Browse file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- onedrive -->
+                                        <div class="container" id="onedrive">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <form>  
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">OneDrive link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://templetllc-my.sharepoint.com/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Loom link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://loom.com/share/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                    <label for="" class="form-label d-block">Language</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                        <label class="form-check-label" for="inlineRadio1">English</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                        <label class="form-check-label" for="inlineRadio2">Spanish</label>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- onedrive -->
+
+                                        <!-- browse-file -->
+                                        <div class="container" id="browse-file" style="display:none;">
+                                            <div class="row justify-content-center pb-2">
+                                                <div class="col-12 p-0">
+                                                    <form>
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-md-12 p-0">
+                                                                <div class="file-upload-contain">
+                                                                    <label for="" class="form-label">File</label>
+                                                                    <input id="multiplefileupload" type="file" accept=".jpg,.gif,.png" multiple />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Loom link</label>
+                                                                    <input type="url" class="form-control" id="" name="" aria-describedby="" placeholder="https://loom.com/share/…" required="">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-12 p-0">
+                                                                    <label for="" class="form-label d-block">Language</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                                        <label class="form-check-label" for="inlineRadio1">English</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                                        <label class="form-check-label" for="inlineRadio2">Spanish</label>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- browse-file -->
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <button type="submit" class="btn btn-primary-t mt-2 text-uppercase">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="card gradient-badged py-2">
+                            <div class="card-body">
+                                <p class="ps-2"><span class="heavy">Need assistance?</span> <a href="#" class="text-white">Contact us</a> with any questions or concerns</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Collaterals - One : END -->      
+    </section>
+
+    <!-- Footer - One : BEGIN -->
+    <div class="bg-dark border-top">
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-4">
+                <div class="col-md-4 d-flex align-items-center">
+                    <span class="text-green d-none d-md-block tag">Bigger. Faster. Better</span>
+                </div> 
+
+                <div class="col-md-4 text-center">
+                    <a href="/" class="mb-0 me-2 mb-md-0 text-muted text-decoration-none lh-1 pe-2">
+                        <img src="./images/templet.svg" width="100" alt="">                                          
+                    </a>
+                </div> 
+
+                <div class="col-md-4 text-end">
+                    <span class="text-muted">&copy; 2023 Templet LLC. All rights reserved.</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Footer - One : END -->
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/js/plugins/sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.2.3/themes/fas/theme.min.js"></script>
+    <script src="./js/file-upload.js"></script>
+
+    <script>
+        function toggleDivs() {
+            var checkbox = document.getElementById("FileSwitch");
+            var OneDrive = document.getElementById("onedrive");
+            var BrowseFile = document.getElementById("browse-file");
+            if (checkbox.checked) {
+                OneDrive.style.display = "none";
+                BrowseFile.style.display = "block";
+            } else {
+                OneDrive.style.display = "block";
+                BrowseFile.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

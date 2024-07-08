@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Nexa-Regular';
+    src: url('webFonts/Nexa-Regular/font.woff2') format('woff2'), url('webFonts/Nexa-Regular/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Nexa-Bold';
+    src: url('webFonts/Nexa-Bold/font.woff2') format('woff2'), url('webFonts/Nexa-Bold/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Nexa-Heavy';
+    src: url('webFonts/Nexa-Heavy/font.woff2') format('woff2'), url('webFonts/Nexa-Heavy/font.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Hello-America';
+    src: url('webFonts/Hello-America/Hello-America.woff') format('woff');
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heavy {
+    font-family: 'Nexa-Heavy'!important;    
+}
+
+.btn, .btn-primary-t, .bold {
+    font-family: 'Nexa-Bold';
+}
+
+li, span, a, p, select, .txt {
+    font-family: 'Nexa-Regular'!important;
+}
+
+.tag {
+    font-family: 'Hello-America'!important;
+}
+
+footer .tag, .accordion-body {
+    font-family: 'Nexa-Regular'!important;
+}
+
+.name {
+    font-family: 'Nexa-Heavy'!important;  
+    color: #1EC46B;
+}
