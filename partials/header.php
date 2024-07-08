@@ -180,5 +180,5 @@ if(!$haveOutput){
         }
       </style>
 </head>
-<body id="top" data-access="<?=$validAccess?>" data-taskid="<?=$taskId?>" data-templatename="<?=$templateName?>" data-requestid="<?=$requestId?>" data-taskname="<?=$taskName?>" data-path="<?=$path?>" data-restype="<?=$restype_cr220?>" data-output="<?=$output?>" data-phase=<?=$phase?> data-childtask="<?=$child_task?>">
+<body id="top" data-access="<?=$validAccess?>" data-taskid="<?=$taskId?>" data-templatename="<?=$templateName?>" data-requestid="<?=$requestId?>" data-taskname="<?=$taskName?>" data-path="<?=$path?>" data-restype="<?=$restype_cr220?>" data-output="<?=$output?>" data-phase=<?=$phase?> data-childtask="<?=$child_task?>" data-client="<?=$client?>">
     <?php include('partials/nav.php'); ?>

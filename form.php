@@ -18,7 +18,9 @@
                                             <div class="mb-3">
                                                 <div class="col-12 col-md-12 p-0">
                                                     <div class="mb-3">
-                                                        <button class="btn btn-secondary-dark btn-template">Choose a templete</button>
+                                                        <button type="button" class="btn btn-secondary-dark btn-template">
+                                                            Choose a templete
+                                                        </button>
                                                         <span class="error_template_link error">Mensaje de Error</span>
                                                         <br>
                                                         <input type="text" name="template_write">
