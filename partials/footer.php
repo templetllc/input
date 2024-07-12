@@ -42,23 +42,23 @@
     <script src="./js/main.js"></script>
 
     <script>
-        function toggleDivs() {
-            var checkbox = document.getElementById("FileSwitch");
-            var OneDrive = document.getElementById("onedrive");
-            var BrowseFile = document.getElementById("browse-file");
-            if (checkbox.checked) {
-                OneDrive.style.display = "none";
-                $(OneDrive).find('form').removeClass('active');
-                BrowseFile.style.display = "block";
-                $(BrowseFile).find('form').addClass('active');
+        // function toggleDivs() {
+        //     var checkbox = document.getElementById("FileSwitch");
+        //     var OneDrive = document.getElementById("onedrive");
+        //     var BrowseFile = document.getElementById("browse-file");
+        //     if (checkbox.checked) {
+        //         OneDrive.style.display = "none";
+        //         $(OneDrive).find('form').removeClass('active');
+        //         BrowseFile.style.display = "block";
+        //         $(BrowseFile).find('form').addClass('active');
 
-            } else {
-                OneDrive.style.display = "block";
-                $(OneDrive).find('form').addClass('active');
-                BrowseFile.style.display = "none";
-                $(BrowseFile).find('form').removeClass('active');
-            }
-        }
+        //     } else {
+        //         OneDrive.style.display = "block";
+        //         $(OneDrive).find('form').addClass('active');
+        //         BrowseFile.style.display = "none";
+        //         $(BrowseFile).find('form').removeClass('active');
+        //     }
+        // }
     </script>
 </body>
 </html>

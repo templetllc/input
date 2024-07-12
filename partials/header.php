@@ -11,16 +11,15 @@
 &Preview folder=https://templetllc-my.sharepoint.com/:f:/g/personal/daniel_templetllc_onmicrosoft_com/EtRa1ZFXH8dKkQHTsoDJXJAB2FeFnKoFmQ803POF3TlITg?e=HetBnq
 &Deliverable folder=https://templetllc-my.sharepoint.com/:f:/g/personal/daniel_templetllc_onmicrosoft_com/ErsFd0TyRhhMri6dnvJbPz0BMwA5GnSM_yShEGvLld_b2A?e=mOUXrw
 
-?task_id=1204990080185694&request_id=7baf9951-4c1b-ee11-8f6e-002248081d31&template_name=Slide Decks - Company Overview&task_name=Slide Decks Texts - Interview&asignee=adrian@templet.io&asignee_name=Adrian&initiative=FRONTIER - PRODUCTS - Ethernet&sources=Es0slKogl65Kgj7eNtU4URoBx_TKQpOWnF2ZJIGFKuZtBA?e=ogMudp&workfiles=Eu9k5YoZmfpGqE5tcsMgfeQBVeRqyR0EsCYR-r4vTIjghw?e=VFBCBl&preview=EtRa1ZFXH8dKkQHTsoDJXJAB2FeFnKoFmQ803POF3TlITg?e=HetBnq&deliverable=ErsFd0TyRhhMri6dnvJbPz0BMwA5GnSM_yShEGvLld_b2A?e=mOUXrw
+?task_id=1207447662521561&request_id=05de1d63-a31e-ef11-840a-000d3a37bb95&template_name=Design%20Pieces%20-%20Social%20Media%20Static%20Posts&task_name=Post%20-%20Design&asignee=j.acevedo%40templet.io&asignee_name=Javier%20Acevedo%20Da%20Silva&initiative=LIBERTY%20NETWORKS%20-%20INITIATIVES%20-%20Dashboards&sources=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMQSFCDQGS6DAJBLYECAJS2QFBHK&workfiles=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMQZGDHX3N2EAFB3CQNYIGA7YUNF&preview=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMXG7ML7EXS5ANFKEEETBB4BNE44&deliverables=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMQCC3RROSEKFFAJ5PKKI2OEEKJS
 
-?task_id=1204990080185694&request_id=7baf9951-4c1b-ee11-8f6e-002248081d31&template_name=Sheets - Proposal Template&task_name=Slide Decks Texts - Interview&asignee=adrian@templet.io&initiative=FRONTIER - PRODUCTS - Ethernet&sources=Es0slKogl65Kgj7eNtU4URoBx_TKQpOWnF2ZJIGFKuZtBA?e=ogMudp&workfiles=Eu9k5YoZmfpGqE5tcsMgfeQBVeRqyR0EsCYR-r4vTIjghw?e=VFBCBl&preview=EtRa1ZFXH8dKkQHTsoDJXJAB2FeFnKoFmQ803POF3TlITg?e=HetBnq&deliverable=ErsFd0TyRhhMri6dnvJbPz0BMwA5GnSM_yShEGvLld_b2A?e=mOUXrw
-
-?task_id=1205960716548705&request_id=63d4fef9-cc83-ee11-8179-000d3a59d5b3&template_name=Emails%20-%20Announcement&task_name=Announcement%20Emails%20-%20HTML%20Formatting&asignee=1138089670393938&asignee_name=Javier%20Acevedo%20Da%20Silva&initiative=FRONTIER%20-%20PRODUCTS%20-%20Wavelength&sources=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMUWAYJ6GWUXAZDI2U7GEYZKRUMO&workfiles=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMSBH5U3JZQ6NBGZUN2E4TY5JG2R&preview=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMRKNYJIOVO2JJDY4IMAF43ANH3S&deliverables=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMXRMVTGAJIRHBBK7FR64VSA6FIB
-
-https://templetllc-my.sharepoint.com/:f:/g/personal/daniel_templetllc_onmicrosoft_com/EipuEodV2kpHjiGALzYGn3IB_bH_7qeFdQmLzJMue6Hgrg?e=qUN8NX
+?task_id=1206780877598909&request_id=64880d03-0ddc-ee11-904d-002248081d31&template_name=Websites%20-%20Dashboard&task_name=Website%20Texts%20-%20Structure%20and%20Writeup&asignee=j.acevedo%40templet.io&asignee_name=Javier%20Acevedo%20Da%20Silva&initiative=LIBERTY%20NETWORKS%20-%20INITIATIVES%20-%20Dashboards&sources=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMV7YM47UIXHMRFJ2YKPR2DZBLB3&workfiles=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMRPHXBEBFVLQREKPPUERHHIXSYO&preview=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMXVIWQOMFTVGNAIR4KVNAS2MESL&deliverables=b!GizpIt4ya0qaDvc_4eZ7SJOqiwKmAxlNiQnx5wrl4pByxvNAM638TYXZURuvD08v.01G3FULMQ2LIDUE7ERJNAYS5Z53M3VUJ6J
 
 //Excel
 https://templetllc-my.sharepoint.com/:x:/r/personal/daniel_templetllc_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7BF9141218-F687-48F5-A982-6106A247688D%7D&file=Consolidated%20-%20Template%20list.xlsx&action=default&mobileredirect=true&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyOC8yMzA3MDMwNzM0NiIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D&wdOrigin=TEAMS-ELECTRON.p2p_ns.bim&wdExp=TEAMS-CONTROL&wdhostclicktime=1708005886531&web=1
+
+
+https://templetllc-my.sharepoint.com/:f:/g/personal/daniel_templetllc_onmicrosoft_com/EhIohwNLwwJCvBBATLUChOoBtLLu6Vy-1gQFLVIHoj6SKw?e=YaMQDs
 */
 
 //Get Values

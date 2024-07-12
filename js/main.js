@@ -267,47 +267,28 @@ $(function(){
     $('.btn-template').on('click', function(){
 
     	let _client = $('body').data('client');
-    	let _restType = $('body').data('restype');
+        if(_client.length <= 1){
+            return false;
+        }
+
+        let _restType = $('body').data('restype');
+        if(_restType.length <= 1){
+            return false;
+        }
+
+        $('#ModalChooseTemplate').modal('show');
 		            
-        var dataString = {'restype': _restType, 'client': _client};
-
-        $.ajax({
-            url: "include/getTemplates.php",
-            type: 'POST',
-            data: dataString,
-            async: false,
-            success: function (response) {
-                var data = jQuery.parseJSON(response)
-                var len = data.length;
-
-                // var urlEmail = root + "/admin/builder.php?email=" + data[0]['client'] + "_" + data[0]['initiative'] + "__" + data[0]['email'];
-                // console.log(urlEmail);
-                // location.href = urlEmail;
-                return true;
-            },
-            error:function(response){
-                console.log(response);
-            }
-        }); 
     });
 
 
     $('#ModalChooseTemplate').on('show.bs.modal', function (event) {
-        var _modalCreate = $('#ModalCreateEmail');
 
-        var _name = _modalCreate.find('#inputName').val();
-        var _client = _modalCreate.find('#inputClient').val();
-        var _initiative = _modalCreate.find('#inputInitiative').val();
+    	let _client = $('body').data('client');
+		let _restType = $('body').data('restype');
+        
+        let dataString = {'restype': _restType, 'client': _client};
 
-        $(this).attr('data-client', _client);
-        $(this).attr('data-initiative', _initiative);
-        $(this).attr('data-name', _name);
-
-        $('.template-list').empty();
-        $('.no-result_templates').hide();
-
-        var selectCategories = "#inputCategory";
-        var dataString = 'client='+_client;
+        let selectCategories = "#inputCategoryTemplates";
 
         $.ajax({
             url: "include/getCategories.php",
@@ -316,21 +297,17 @@ $(function(){
             async: false,
             success: function (response) {
             
-                var data = jQuery.parseJSON(response)
-                var len = data.length;
+                let data = jQuery.parseJSON(response)
+                let len = data.length;
                 $(selectCategories).empty();
                 $(selectCategories).append('<option value="">- Select Category -</option>');
 
                 for(var i=0; i<len; i++){
+                    _value = data[i]['value'];
                     _category = data[i]['category'];
-
-                    var category_text = _category.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-                        return letter.toUpperCase();
-                    });
-                    var category_text = category_text.replace(/-/g, " ");
-
+                    
                     if(_category.length > 0 ){
-                        $(selectCategories).append('<option value="' + _category + '">' + category_text + '</option>');
+                        $(selectCategories).append('<option value="' + _value + '">' + _category + '</option>');
                         _have = true;
                     }
                 }
@@ -340,14 +317,68 @@ $(function(){
                     $(selectCategories).append('<option value="">- Categories not found -</option>');
                 } 
 
-                var dataString = 'category=&initiative='+_initiative+'&client='+_client;
                 getTemplates(dataString);
 
             },
             error:function(response){
                 console.log(response);
             }
-        })
+        });     
+    });
+
+    var getTemplates = function(dataString)
+    {
+    	let containerTemplates = '.template-list';
+        $(containerTemplates).empty();
+        $('.no-result_templates').hide();
+
+    	$.ajax({
+            url: "include/getTemplates.php",
+            type: 'GET',
+            data: dataString,
+            async: false,
+            success: function (response) {
+                if(response.length > 5) {
+	                $(containerTemplates).html(response);
+	            } else {
+	                $('.no-result_templates').show();
+	            }
+	            return true;
+            },
+            error:function(response){
+                console.log(response);
+            }
+        }); 
+    };
+
+    $('[data-toggle=drop-category]').on('change', function(){
+        let _client = $('body').data('client');
+		let _restType = $('body').data('restype');
+
+        let _category = $(this).val();
+        
+        if(_category.length == 0){
+        	let dataString = {'restype': _restType, 'client': _client};
+            getTemplates(dataString);
+            return false;
+        }
+
+        let dataString = {'restype': _restType, 'client': _client, 'category': _category};
+
+        getTemplates(dataString);
+
+        // //Update Search Filter
+        // var inputSearch = $('#intputSearch');
+        // var value = $(inputSearch).val().toLowerCase();
+        // $(".template-list .template-item").filter(function() {
+        //     $(this).toggle($(this).find('.title-card').text().toLowerCase().indexOf(value) > -1);
+        // });
+        // if($(".template-list .template-item:visible").length > 0){
+        //     $('.no-result_templates').hide();
+        // } else {
+        //     $('.no-result_templates').show();
+        // };
+
     });
 
     var sendProcess = function(_form)
@@ -421,7 +452,7 @@ $(function(){
 		} else {
 			alert("We encountered a problem processing the data, please contact your system administrator.")
 		}
-    }
+    };
 
     var checkFolder = function(folder, id='')
     {

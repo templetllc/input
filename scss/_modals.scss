@@ -5,8 +5,7 @@
 
 .modal-content {
     border: 0px solid rgba(0,0,0,.2);
-    border-radius: 1rem;
-    margin-top: 5rem;
+    border-radius: 8px;
 }
 
 .modal-header {
@@ -20,6 +19,32 @@
     background-color: #F5F5F5;
     border: 1px solid #707070;
     border-radius: 1rem;
+}
+
+
+.modalbutton {
+    .input-group-append {
+        margin-left: 0;
+
+        .btn-file_shared {
+            background: transparent;
+            border-radius: 0 5px 5px 0;
+            height: 38px;
+            border: 1px solid #07DD87;
+            color: #23DD87;
+
+            &:hover {
+                background: #07DD87;
+                color: #ffffff;
+            }
+        }
+    }
+}
+
+.modalPreview {
+    .modal-content {
+        border: 1px solid #c5c5c5;
+    }
 }
 
 h1 {
@@ -40,65 +65,202 @@ h1 {
     padding: 0.70rem 1rem;
 }
 
-.modal {
-    .modal-title {
-        font-size: 1.25rem;
-        color: $black;
-        font-family: 'Nexa-Bold'!important;
-    }
+// .modal {
+//     .modal-title {
+//         font-size: 1.25rem;
+//         color: $black;
+//         font-family: 'Nexa-Bold'!important;
+//     }
 
-    .form-control, .form-select {
-        border-radius: 6px;
-        font-family: "Nexa-Regular" !important;
-        border: 1px solid #DADCDE!important;
-        color: #5D5D5D !important;
-        padding: 0.657rem 0.75rem!important;
-        font-size: 14px!important;
-    }
+//     .form-control, .form-select {
+//         border-radius: 6px;
+//         font-family: "Nexa-Regular" !important;
+//         border: 1px solid #DADCDE!important;
+//         color: #5D5D5D !important;
+//         padding: 0.657rem 0.75rem!important;
+//         font-size: 14px!important;
+//     }
 
-    .form-label {
-        font-size: 14px;
-        margin-bottom: 5px;
-    }
+//     .form-label {
+//         font-size: 14px;
+//         margin-bottom: 5px;
+//     }
 
-    .modal-content {
-        border-radius: 12px;
-    }
+//     .modal-content {
+//         border-radius: 12px;
+//     }
 
-    .modal-footer {
-        border-top: 0 solid transparent;
-    }
+//     .modal-footer {
+//         border-top: 0 solid transparent;
+//         z-index: 1;
+//     }
 
-    h6 {
-        font-family: 'Nexa-Bold'!important;
-        font-size: 14px;
-    }
+
+//     h6 {
+//         font-family: 'Nexa-Bold'!important;
+//         font-size: 14px;
+//     }
     
-    .ico-dot {
-        position: relative;
-        top: -1px;
-        margin-right: 2px;
-    }
+//     .ico-dot {
+//         position: relative;
+//         top: -1px;
+//         margin-right: 2px;
+//     }
 
-    .form-check {
-        font-size: 14px;
+//     .form-check {
+//         font-size: 14px;
+//     }
+
+//     .modal-content {
+//         border: 0px solid rgba(0,0,0,.0)!important;
+//         border-radius: 10px!important;
+//     }
+
+//     .btn-plus {
+//         padding: 0.657rem 0.75rem !important;
+//         padding-bottom: 9px!important;
+//         svg {
+//             position: relative;
+//             top: -1px;
+//         }
+//     }
+
+//     .newproject .mt-3 {
+//         margin-top: 12px!important;
+//     }
+// }
+
+.modalTemplate {
+    height: 100vh;
+
+    .container-fluid {
+        padding-right: 0px;
+        padding-left: 0px;
     }
 
     .modal-content {
-        border: 0px solid rgba(0,0,0,.0)!important;
-        border-radius: 10px!important;
+        height: 100vh;
     }
 
-    .btn-plus {
-        padding: 0.657rem 0.75rem !important;
-        padding-bottom: 9px!important;
-        svg {
-            position: relative;
-            top: -1px;
+    .modal-dialog {
+        max-width: 100%;
+        transform: none !important;
+    }
+
+    .close {
+        border: 0;
+        background: none;
+    }
+
+    .type-new_email {
+        &.active {
+            .card {
+                border: 2px #23DD87 solid;
+            }
         }
     }
 
-    .newproject .mt-3 {
-        margin-top: 12px!important;
+    .card {
+        background-color: #ffffff;
+        border: 0px;
+        box-shadow: rgba(35, 46, 60, 0.04) 0 2px 4px 0;
+        border: 1px solid rgba(101, 109, 119, 0.16);
+        width: 100%;
+        height: 310px;
+        overflow: hidden;
+    
+        img {
+            transition: .5s;
+        }
+
+        &:hover {
+            border: 1px #23DD87 solid;
+
+            img {
+                transform: translateY(-42%);
+            }
+        }
+
+        
+    }
+
+    .template-list {
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: 0.5s ease;
+            //background: transparent linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(11, 11, 11, 0.3019607843) 100%) 0% 0% no-repeat padding-box;
+            background: #00000080 0% 0% no-repeat padding-box;
+            border-radius: 6px;
+
+            .button-action {
+                padding-top: 90px;
+
+                .btn {
+                    min-width: 110px;
+                }
+            }
+        }
+
+        .template-item {
+            &.active {
+                .card {
+                    border: 2px #23DD87 solid;
+                }
+            }
+            &:hover {
+                .overlay {
+                    opacity: 1;
+                }
+            }
+            .card-body {
+                padding: 12px 12px 12px 12px;
+            }
+        }
+
+    }
+}
+
+.modal-xl {
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+
+    pre {
+        height: 100%;
+    }
+
+    .modal-content {
+        border: 0px solid transparent;
+        border-radius: 0px;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        margin-bottom: 0px;
+    }
+
+    .modal-body.codeSource {
+        padding-bottom: 0px!important;
+    }
+
+    .modal-footer {
+        z-index: 1;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: white;
+    }
+
+    button.btn.btn-secondary.br-color.copy-code {
+        margin-right: 5px;
     }
 }

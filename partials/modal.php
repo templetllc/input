@@ -83,33 +83,31 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">Pick a template</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" data-bs-dismiss="modal" aria-label="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" width="10.557" height="10.555" viewBox="0 0 10.557 10.555">
                         <path id="ico-close" d="M17.815,16.566,21.585,12.8a.884.884,0,1,0-1.25-1.25l-3.771,3.771-3.771-3.771a.884.884,0,1,0-1.25,1.25l3.771,3.771-3.771,3.771a.884.884,0,0,0,1.25,1.25l3.771-3.771,3.771,3.771a.884.884,0,0,0,1.25-1.25Z" transform="translate(-11.285 -11.289)" fill="#b3b3b3"/>
                     </svg>
                 </button>
             </div>
             <div class="modal-body">
-                <!-- 
                 <div class="filters-box">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="inputCategory">Category</label>
-                                <select class="custom-select" id="inputCategory" data-toggle="drop-category" required>
+                                <label for="inputCategoryTemplates">Category</label>
+                                <select class="custom-select" id="inputCategoryTemplates" data-toggle="drop-category" required>
                                     <option selected>- Categories Not Found -</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <!-- <div class="form-group col-md-6">
                                 <label for="intputSearch">Search</label>
                                 <input type="text" class="form-control" id="intputSearch" placeholder="Search">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
-                <hr> 
-                -->
+                <hr>
 
                 <section class="thumbnails-boxes px-1">
                     <div class="container-flui pb-5">
@@ -127,14 +125,14 @@
             </div>
             <div class="modal-footer justify-content-between">
                 <div>
-                    <button type="button" class="btn btn-light" data-dismiss="modal">
+                    <button type="button" class="btn btn-light" data-dismiss="modal" data-bs-dismiss="modal">
                         <span class="text-btn-gray">Close</span>
                     </button>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary btn-create-template" disabled>
-                        <span class="text-btn">Create</span>
-                    </button>
+                   <!--  <button type="button" class="btn btn-primary btn-select-template" disabled>
+                        <span class="text-btn">Select</span>
+                    </button> -->
                 </div>
             </div>
         </div>
