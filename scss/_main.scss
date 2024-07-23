@@ -67,3 +67,26 @@ span.error {
     height: 100%;
     overflow: hidden;
 }
+
+.template-selected {
+	img {
+		max-height: 280px;
+	}
+}
+
+.card-body > a:hover {
+    border: 0.5px solid #eeeeee;
+    height: auto;
+    display: block;
+    /* border-radius: 18px; */
+    border-radius: var(--bs-border-radius-xl)!important;
+}
+
+.card-body > a:hover > img {
+    opacity: 0.5;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}

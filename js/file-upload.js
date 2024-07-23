@@ -13,12 +13,12 @@
 
 var _accept = $("#fileupload").attr('accept');
 
-const arrayExt = _accept.split(",");
+// const arrayExt = _accept.split(",");
 
-arrayExt.forEach(function(ext, i) {
-	let _ext = ext.substring(1);
-	arrayExt[i] = _ext;
-});
+// arrayExt.forEach(function(ext, i) {
+// 	let _ext = ext.substring(1);
+// 	arrayExt[i] = _ext;
+// });
 
 $("#fileupload").fileinput({
     theme: "explorer-fas",
@@ -27,7 +27,7 @@ $("#fileupload").fileinput({
     uploadAsync: true,
     initialPreviewAsData: true,
     overwriteInitial: false,
-    dropZoneTitle: '<div class="upload-area"><i class="far fa-images"></i><p>Browse or Drag and Drop '+_accept+'</p> <div> <button type="button">Browse File</button> </div></div>',
+    dropZoneTitle: '<div class="upload-area"><i class="far fa-images"></i><p>Browse or Drag and Drop </p> <div> <button type="button">Browse File</button> </div></div>',
     dropZoneClickTitle: "",
     browseOnZoneClick: true,
     showRemove: true,
@@ -42,7 +42,7 @@ $("#fileupload").fileinput({
     removeClass: 'kv-file-remove file-remove',    
     removeTitle: 'Remove file',
     removeLabel: '',
-    allowedFileExtensions: arrayExt,
+    //allowedFileExtensions: arrayExt,
 
     fileActionSettings: {
         showUpload: false,

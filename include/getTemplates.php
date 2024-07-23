@@ -13,12 +13,20 @@ if(empty($restype)) {
     return false;
 };
 
-$client = strstr($client, " ", true);
-$restype = strstr($restype, " ", true);
+
+if(stripos($client, " ") > 0){
+    $client = strstr($client, " ", true);
+}
+
+if(stripos($restype, " ") > 0){
+    $restype = strstr($restype, " ", true);    
+} 
+
 
 if(strtolower($restype) == 'design') $restype = 'designs';
 
-$url = 'https://templates.templet.io/'.strtolower($client).'/templates.json';
+//$url = 'https://templates.templet.io/'.strtolower($client).'/templates.json';
+$url = 'https://templates.templet.io/'.strtolower($client).'/'.strtolower($client).'.json';
 
 $data = @file_get_contents($url);
 $templates = json_decode($data);
@@ -27,6 +35,8 @@ if($templates){
 
     $html = '';
     foreach ($templates as $key => $file) {
+        if(!isset($file->writer) || !isset($file->design)) continue;
+
         $writer     = $file->writer;
         $design     = $file->design;
 
@@ -37,39 +47,40 @@ if($templates){
         }
 
         $_url = '#';
-        $_thumbnail = "https://templates.templet.io/".strtolower($file->client)."/pages/".$file->restype.'/images/thumbnails/'.$file->image;
+        $_image = substr($file->image, 1);
+        //$_thumbnail = "https://templates.templet.io/".strtolower($file->client)."/pages/".$file->restype.'/images/thumbnails/'.$file->image;
+        $_thumbnail = "https://templates.templet.io/".strtolower($file->client)."/pages/".$file->restype.$_image;
 
-        $html .= '<div class="col-lg-3 col-xl-2 pb-4 template-item" data-client="'.$file->client.'" data-restype="'.$file->restype.'">';
-        $html .= '    <div class="card card-sm" >';
-        $html .= '        <div class="img-50">';
-        $html .= '            <a href="'.$_url.'" target="" class="d-block">';
-        $html .= '                <img src="'.$_thumbnail.'" class="w-100">';
-        $html .= '            </a>';
-        $html .= '        </div>';
-        $html .= '        <div class="card-body" >';
-        $html .= '            <div class="d-flex">';
-        $html .= '                <div>';
-        $html .= '                    <h6 class="title-card mb-2" data-title="'.$file->title.'" data-tooltip="tooltip" title="'.$file->title.'">'.$file->title.'</h6>';
-        $html .= '                </div>';
-        $html .= '            </div>';
-        $html .= '        </div>';
+        $html .= '<div class="col-lg-3 col-xl-2 pb-4 template-item card-root" data-client="'.$file->client.'" data-restype="'.$file->restype.'" data-write="'.$writer .'" data-design="'.$design.'">';
+        $html .= '  <div class="card card-sm rounded-2">';
+        $html .= '      <div class="card-title-col my-1 d-flex align-items-center justify-content-between">';
+        $html .= '          <div class="d-flex align-items-center">';
+        $html .= '              <h6 class="title-card mb-0 ps-2" data-title="'.$file->title.'" data-tooltip="tooltip" title="'.$file->title.'">'.$file->title.'</h6>';
+        $html .= '          </div>';
+        $html .= '      </div>';
+
+        $html .= '      <div class="card rounded-2 border-0 box">';
+        $html .= '          <div class="card-body p-0">';
+        $html .= '              <a href="'.$_url.'" >';
+        $html .= '                  <img class="img-fluid rounded-2 template-image" loading="lazy" src="'.$_thumbnail.'" />';
+        $html .= '              </a>';
+        $html .= '          </div>';
+        $html .= '      </div>';
 
         //Options Menu
         $html .= '        <div class="overlay">';
         $html .= '            <div class="button-action row align-item-center justify-content-center text-center">';
-        $html .= '                 <div class="col-12"><button class="btn btn-primary mb-2 btn-use-template">';
+        $html .= '                 <div class="col-12"><button class="btn btn-primary mb-2 btn-select-template">';
         $html .= '                    Select';
         $html .= '                 </button></div>';
-        $html .= '                 <div class="col-12"><button class="btn btn-primary mb-2" data-toggle="modal" data-target="#modalPreview" data-width="920">';
-        $html .= '                    View';
-        $html .= '                 </button></div>';
-        // $html .= '                 <div class="col-12"><button class="btn btn-primary" data-toggle="modal" data-target="#ModalSendTest">';
-        // $html .= '                    Send a test';
+        // $html .= '                 <div class="col-12"><button class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalPreview" data-width="920">';
+        // $html .= '                    View';
         // $html .= '                 </button></div>';
         $html .= '            </div>';
         $html .= '        </div>';
         $html .= '    </div>';
         $html .= '</div>';
+
     };
 
     echo $html;

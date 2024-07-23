@@ -84,16 +84,13 @@ if($validAccess > 0){
 
         if($_templateName == $templateName){
             if($_taskName == $taskName){
-                echo "<pre>";
-                print_r($template);
-                echo "</pre>";
-
                 $haveOutput = true;
                 $restype = strtolower($template['cr220_restype']);
                 $restype_cr220 = $template['cr220_restype'];
                 $output = $template['cr220_output'];
                 $destination = $template['cr220_destinationfolder'];
                 $phase = $template['cr220_phase'];
+                $area = $template['cr220_area'];
                 if(empty($destination )){
                     break;
                 }
@@ -179,5 +176,5 @@ if(!$haveOutput){
         }
       </style>
 </head>
-<body id="top" data-access="<?=$validAccess?>" data-taskid="<?=$taskId?>" data-templatename="<?=$templateName?>" data-requestid="<?=$requestId?>" data-taskname="<?=$taskName?>" data-path="<?=$path?>" data-restype="<?=$restype_cr220?>" data-output="<?=$output?>" data-phase=<?=$phase?> data-childtask="<?=$child_task?>" data-client="<?=$client?>">
+<body id="top" data-access="<?=$validAccess?>" data-taskid="<?=$taskId?>" data-templatename="<?=$templateName?>" data-requestid="<?=$requestId?>" data-taskname="<?=$taskName?>" data-path="<?=$path?>" data-restype="<?=$restype_cr220?>" data-output="<?=$output?>" data-phase=<?=$phase?> data-childtask="<?=$child_task?>" data-client="<?=$client?>" data-area="<?=$area?>">
     <?php include('partials/nav.php'); ?>

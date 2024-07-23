@@ -27,9 +27,15 @@
                     	<?php include('partials/project-panel.php'); ?>
                     	<!-- END Project Panel -->
 
-                        <!-- Form Restype -->
+                        <!-- Form Template -->
+                        <?php 
+                        if($area == 'CREATIVE' || $area == 'CONTENT') include('./template.php');
+                        ?>
+                        <!-- END Form Template -->
+
+                        <!-- Form General -->
                         <?php include('./form.php');?>
-                        <!-- END Form Restype -->
+                        <!-- END Form General -->
                     </div>
                 </div>
                 <div class="col-12 mt-3">

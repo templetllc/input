@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@loomhq/loom-embed": "^1.7.0",
+    "@loomhq/record-sdk": "^3.3.7"
+  }
+}

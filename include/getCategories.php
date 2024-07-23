@@ -13,12 +13,19 @@ if(empty($restype)) {
 };
 
 
-$client = strstr($client, " ", true);
-$restype = strstr($restype, " ", true);
+if(stripos($client, " ") > 0){
+    $client = strstr($client, " ", true);
+}
+
+if(stripos($restype, " ") > 0){
+    $restype = strstr($restype, " ", true);    
+} 
+
 
 if(strtolower($restype) == 'design') $restype = 'designs';
 
-$url = 'https://templates.templet.io/'.strtolower($client).'/templates.json';
+//$url = 'https://templates.templet.io/'.strtolower($client).'/templates.json';
+$url = 'https://templates.templet.io/'.strtolower($client).'/'.strtolower($client).'.json';
 
 $data = @file_get_contents($url);
 $templates = json_decode($data);

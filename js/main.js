@@ -65,12 +65,14 @@ $(function(){
 		e.preventDefault()
 
 		let _form = $('body').find('form.active');
+		let _formTemplate = $('body').find('form.form-template');
+		let _area = $('body').data('area');
 
 		var validateForm = true;
 		let btn = $(this);
 		
 		$('.btn-submit').prop('disabled', true);
-		$('span.loading').removeClass('d-none');
+		$('div.loading').removeClass('d-none');
 
 		//Search each input
 		$(_form).find('input').each(function(){			
@@ -85,7 +87,7 @@ $(function(){
 					validateForm = false;
 
 					$(btn).prop('disabled', false);
-					$('span.loading').addClass('d-none');
+					$('div.loading').addClass('d-none');
 					return false;
 				}
 			};
@@ -103,7 +105,7 @@ $(function(){
 							validateForm = false;
 
 							$(btn).prop('disabled', false);
-							$('span.loading').addClass('d-none');
+							$('div.loading').addClass('d-none');
 							return false;
 						}
 					break;
@@ -112,90 +114,13 @@ $(function(){
 						var pattern = "https://loom.com/share/";
 						var pattern2 = "https://www.loom.com/share/";
 						if(_value.length > 0){
-							console.log(_value.indexOf(pattern), _value.indexOf(pattern2));
 							if(_value.indexOf(pattern) != 0 && _value.indexOf(pattern2) != 0 ){
 								$(_form).find('.error_'+_thisID).text("URL not valid.")
 								$(_form).find('.error_'+_thisID).show();
 								validateForm = false;
 
 								$(btn).prop('disabled', false);
-								$('span.loading').addClass('d-none');
-								return false;
-							}
-						}
-					break;
-
-					case 'evernote':
-						var pattern = "https://www.evernote.com/";
-						if(_value.length > 0){
-							if(_value.indexOf(pattern) != 0){
-								$(_form).find('.error_'+_thisID).text("URL not valid.")
-								$(_form).find('.error_'+_thisID).show();
-								validateForm = false;
-
-								$(btn).prop('disabled', false);
-								$('span.loading').addClass('d-none');
-								return false;
-							}
-						}
-					break;
-
-					case 'email':
-						var pattern = "https://email.templet.io/admin/builder";
-						if(_value.length > 0){
-							if(_value.indexOf(pattern) != 0){
-								$(_form).find('.error_'+_thisID).text("URL not valid.")
-								$(_form).find('.error_'+_thisID).show();
-								validateForm = false;
-
-								$(btn).prop('disabled', false);
-								$('span.loading').addClass('d-none');
-								return false;
-							}
-						}
-					break;
-
-					case 'xd':
-						var pattern = "https://xd.adobe.com/view/";
-						if(_value.length > 0){
-							if(_value.indexOf(pattern) != 0){
-								$(_form).find('.error_'+_thisID).text("URL not valid.")
-								$(_form).find('.error_'+_thisID).show();
-								validateForm = false;
-
-								$(btn).prop('disabled', false);
-								$('span.loading').addClass('d-none');
-								return false;
-							}
-						}
-					break;
-
-					case 'website':
-						//var pattern = "https://sites.templet.io/admin/builder";
-						var pattern = "https://";
-						if(_value.length > 0){
-							if(_value.indexOf(pattern) != 0){
-								$(_form).find('.error_'+_thisID).text("URL not valid.")
-								$(_form).find('.error_'+_thisID).show();
-								validateForm = false;
-
-								$(btn).prop('disabled', false);
-								$('span.loading').addClass('d-none');
-								return false;
-							}
-						}
-					break;
-
-					case 'frame':
-						var pattern = "https://f.io";
-						if(_value.length > 0){
-							if(_value.indexOf(pattern) != 0){
-								$(_form).find('.error_'+_thisID).text("URL not valid.")
-								$(_form).find('.error_'+_thisID).show();
-								validateForm = false;
-
-								$(btn).prop('disabled', false);
-								$('span.loading').addClass('d-none');
+								$('div.loading').addClass('d-none');
 								return false;
 							}
 						}
@@ -204,10 +129,28 @@ $(function(){
 			}
 		});
 
+		//Validate Template
+		if(_area == 'CONTENT' || _area == 'CREATIVE'){
+			let _valueWrite = $('#template_write').val();
+			let _valueDesign = $('#template_design').val();
+
+			if(_valueWrite.length == 0 && _valueDesign.length == 0){
+				console.log("Error Template");
+				$(_formTemplate).find('.error_template_link').text("This field is required.")
+				$(_formTemplate).find('.error_template_link').show();
+				validateForm = false;
+
+				$(btn).prop('disabled', false);
+				$('div.loading').addClass('d-none');
+				return false;
+			}
+			
+		};
+
 		//Validate select
 		$(_form).find('select').each(function(){		
-			var _thisID = $(this).attr('id');
-			var _value = $(this).val();
+			let _thisID = $(this).attr('id');
+			let _value = $(this).val();
 
 			//Validate required
 			if(typeof $(this).attr('required') !== "undefined"){
@@ -217,7 +160,7 @@ $(function(){
 					validateForm = false;
 
 					$(btn).prop('disabled', false);
-					$('span.loading').addClass('d-none');
+					$('div.loading').addClass('d-none');
 					return false;
 				}
 			};
@@ -225,22 +168,22 @@ $(function(){
 
 		//Validate language
 		if($(_form).find('#language').length > 0){
-			var lang = $(_form).find('#language:checked').val();
+			let lang = $(_form).find('#language:checked').val();
 			if(typeof lang === "undefined"){
 				$(_form).find('.error_language').text("You must select a language.")
 				$(_form).find('.error_language').show();
 
 				$(btn).prop('disabled', false);
-				$('span.loading').addClass('d-none');
+				$('div.loading').addClass('d-none');
 				validateForm = false;
 				console.log("Error language");
-				return false;
+				
 			};
 		};
-
+		
 		if(validateForm){
 			$('.btn-submit').prop('disabled', true);
-			$('span.loading').removeClass('d-none');
+			$('div.loading').removeClass('d-none');
 
 			setTimeout(() => {
 				sendProcess(_form);
@@ -276,6 +219,8 @@ $(function(){
             return false;
         }
 
+		$('.error_template_link').hide();
+
         $('#ModalChooseTemplate').modal('show');
 		            
     });
@@ -289,6 +234,8 @@ $(function(){
         let dataString = {'restype': _restType, 'client': _client};
 
         let selectCategories = "#inputCategoryTemplates";
+
+        let _have = false;
 
         $.ajax({
             url: "include/getCategories.php",
@@ -340,6 +287,14 @@ $(function(){
             success: function (response) {
                 if(response.length > 5) {
 	                $(containerTemplates).html(response);
+
+	                Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+			            const msnry = new Masonry('.template-list', {
+			                itemSelector: '.card-root',
+			                percentPosition: true
+			            });
+			            msnry.layout();
+			        });
 	            } else {
 	                $('.no-result_templates').show();
 	            }
@@ -350,6 +305,35 @@ $(function(){
             }
         }); 
     };
+
+    $('#modalPreview').on('show.bs.modal', function (event) {
+        let button = $(event.relatedTarget);
+        let client 	= $(button).parents('.template-item').data('client');
+        let restype = $(button).parents('.template-item').data('restype');
+        let thumbnail = $(button).parents('.template-item').find('.template-image ').attr('src');
+        let title = $(button).parents('.template-item').find('.title-card').attr('title');
+
+        let modal = $(this);
+        let width = $(button).attr('data-width');
+
+       
+        modal.find('.imagen-modal').attr('src', thumbnail);
+
+        modal.find('.modal-title').text(title);
+        modal.find('.modal-dialog').css('max-width', width+'px');
+
+        $(this).css('z-index', 1052);
+
+    });
+
+    $('#modalPreview').on('shown.bs.modal', function (event){
+        $('.modal-backdrop').last().css('z-index', 1051);
+    });
+
+    $('#modalPreview').on('hidden.bs.modal', function (event) {
+        var modal = $(this);
+        modal.find('.imagen-modal').attr('src', thumbnail);
+    });
 
     $('[data-toggle=drop-category]').on('change', function(){
         let _client = $('body').data('client');
@@ -367,17 +351,33 @@ $(function(){
 
         getTemplates(dataString);
 
-        // //Update Search Filter
-        // var inputSearch = $('#intputSearch');
-        // var value = $(inputSearch).val().toLowerCase();
-        // $(".template-list .template-item").filter(function() {
-        //     $(this).toggle($(this).find('.title-card').text().toLowerCase().indexOf(value) > -1);
-        // });
-        // if($(".template-list .template-item:visible").length > 0){
-        //     $('.no-result_templates').hide();
-        // } else {
-        //     $('.no-result_templates').show();
-        // };
+    });
+
+    $('body').on('click', '.btn-select-template', function(){
+        
+        let client 	= $(this).parents('.template-item').data('client');
+        let restype = $(this).parents('.template-item').data('restype');
+        let thumbnail = $(this).parents('.template-item').find('.template-image ').attr('src');
+        let title = $(this).parents('.template-item').find('.title-card').attr('title');
+
+        $(this).parents('.template-item').toggleClass('active');
+
+        $('#ModalChooseTemplate').modal('hide');
+
+    });
+
+    $('#ModalChooseTemplate').on('hidden.bs.modal', function (event) {
+        let modal = $(this);
+        
+        let templateSelected = modal.find('.template-item.active');
+        let imageSelected = templateSelected.find('.template-image').attr('src');
+        let titleSelected = templateSelected.find('.title-card').attr('title');
+
+        $('#template_write').val(templateSelected.data('write'));
+		$('#template_design').val(templateSelected.data('design'));
+		$('.template-selected').find('img').attr('src', imageSelected);
+		$('.template-selected').find('.title-template').text(titleSelected);
+		$('.template-selected').removeClass('d-none');
 
     });
 
@@ -459,7 +459,7 @@ $(function(){
 
     	let folderId;
 
-    	console.log(folder, id);
+    	//console.log(folder, id);
 
     	let url = 'include/checkFolder.php?folder='+folder+'&folderId='+id;
 
@@ -469,11 +469,11 @@ $(function(){
 		  	async: false,
 		  	beforeSend: function(){
 		        $('.btn-submit').prop('disabled', true);
-				$('span.loading').removeClass('d-none');
+				$('div.loading').removeClass('d-none');
 		    },
 		  	success: function(response) {
 		  		$('.btn-submit').prop('disabled', true);
-				$('span.loading').removeClass('d-none');
+				$('div.loading').removeClass('d-none');
 
 				folderId = response;
 		  	},
@@ -487,17 +487,19 @@ $(function(){
 
     var sendFlow = function(_form, fileId = '')
     {
-    	console.log('fileId', fileId);
-    	var _onedrive_link = $(_form).find('#onedrive_link').val();
-		var _onedrive_file = $(_form).find('#onedrive_file').val();
-		var _loom_link = $(_form).find('#loom_link').val();
-		var _website_link = $(_form).find('#website_link').val();
-		var _xd_link = $(_form).find('#xd_link').val();
-		var _email_link = $(_form).find('#email_link').val();
-		var _frameio_link = $(_form).find('#frameio_link').val();
-		var _evernote_link = $(_form).find('#evernote_link').val();
-		var _language = $(_form).find('#language').val();
-		var _adobe_link = $(_form).find('#adobe_link').val();
+    	
+    	let _formTemplate = $('#formTemplate');
+
+    	//console.log('fileId', fileId);
+    	
+    	let _onedrive_link = $(_form).find('#onedrive_link').val();
+		let _loom_link = $(_form).find('#loom_link').val();
+		let _language = $(_form).find('#language').val();
+		let _write_link = $(_formTemplate).find('#template_write').val();
+		let _design_link = $(_formTemplate).find('#template_design').val();
+		let _area = $('body').data('area');
+		let _templateURL = '';
+		
 
 		if(fileId.length != 0) {
 			_onedrive_file =  fileId;
@@ -506,17 +508,20 @@ $(function(){
 		}
 		if(typeof _onedrive_link === "undefined") _onedrive_link = "";
 		if(typeof _loom_link === "undefined") _loom_link = "";
-		if(typeof _website_link === "undefined") _website_link = "";
-		if(typeof _xd_link === "undefined") _xd_link = "";
-		if(typeof _email_link === "undefined") _email_link = "";
-		if(typeof _frameio_link === "undefined") _frameio_link = "";
-		if(typeof _evernote_link === "undefined") _evernote_link = "";
-		if(typeof _adobe_link === "undefined") _adobe_link = "";
 		if(typeof _language === "undefined") _language = "";
+		if(typeof _write_link === "undefined") _write_link = "";
+		if(typeof _design_link === "undefined") _design_link = "";
+		
 
-		var _task_id = $('body').data('taskid');
-		var _phase = $('body').data('phase');
-		var _child_task = $('body').data('childtask');
+		if(_area == 'CONTENT') {
+			_templateURL = _write_link;
+		} else if(_area == 'CREATIVE') {
+			_templateURL = _design_link;
+		};
+
+		let _task_id = $('body').data('taskid');
+		let _phase = $('body').data('phase');
+		let _child_task = $('body').data('childtask');
 
 		
 		var dataJson =  {
@@ -527,16 +532,11 @@ $(function(){
 		    path		: $('body').data('path'),
 		    restype		: $('body').data('restype'),
 		    phase		: _phase.toString(),
-		    emailURL	: _email_link,
 		    onedriveID  : _onedrive_file,
 		    onedriveURL	: _onedrive_link,
 		    loomURL		: _loom_link,
-		    frameioURL	: _frameio_link,
-		    websiteURL	: _website_link,
-		    evernoteURL	: _evernote_link,
-		    xdURL		: _xd_link,
-		    adobeURL	: _adobe_link,
 		    language	: _language,
+		    templateURL	: _templateURL,
 		    version		: "1",
 		    child_task  : _child_task.toString()
 		};
@@ -546,7 +546,7 @@ $(function(){
             contentType: "application/json",
             dataType: "json",
             type: 'POST',
-            url:"https://prod-113.westus.logic.azure.com:443/workflows/17f511b70f474413b963ad527fdc1a99/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=OZ7gH7eSXTb4OpdeSmjEbMEvF3CddM8igLYRD2iaVa8",
+            url:"https://prod-138.westus.logic.azure.com:443/workflows/b034f7123c2d492da5cb9ab557a1ed9f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=hCB0yXg_qgncaG70d4ScRVtE-atXTOBU2d8jWwTdDWg",
             data: JSON.stringify(dataJson),
             complete: function() {
                 console.log("success");
@@ -557,5 +557,13 @@ $(function(){
         });
 
     }
+
+    $('.btn-drive').on('click', function(){
+    	let path = $('body').data('path');
+
+    	let url = 'https://templetllc-my.sharepoint.com/personal/daniel_templetllc_onmicrosoft_com/Documents' + path;
+
+    	window.open(url, '_blank')
+    });
 
 });
